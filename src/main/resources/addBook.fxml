@@ -34,23 +34,23 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="24.0" prefWidth="65.0" text="Author" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="authorListView" prefHeight="200.0" prefWidth="200.0" />
                </children></HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="24.0" prefWidth="65.0" text="Language" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="languageListView" prefHeight="200.0" prefWidth="200.0" />
                </children></HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="24.0" prefWidth="65.0" text="Publisher" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="publisherListView" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="24.0" prefWidth="65.0" text="Category" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="categoryListView" prefHeight="200.0" prefWidth="200.0" />
                </children></HBox>
          </children>
       </VBox>

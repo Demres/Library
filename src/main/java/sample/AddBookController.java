@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -17,13 +18,19 @@ import java.io.IOException;
 import java.util.Set;
 
 public class AddBookController {
-
+    @FXML
     TextField titleTextField;
+    @FXML
     TextField editionTextField;
+    @FXML
     TextArea descriptionTextArea;
+    @FXML
     ListView<Author> authorListView;
+    @FXML
     ListView<Language> languageListView;
+    @FXML
     ListView<Category> categoryListView;
+    @FXML
     ListView<Publisher> publisherListView;
 
     public void initialize(){
