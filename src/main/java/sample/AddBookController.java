@@ -75,6 +75,13 @@ public class AddBookController {
         book.setPublisher(publisherListView.getSelectionModel().getSelectedItem());
 
         book.setCategories((Set<Category>)categoryListView.getSelectionModel().getSelectedItems());
+
+        book.setTitle(titleTextField.getText());
+
+        book.setDescription(descriptionTextArea.getText());
+
+        book.setEdition(Integer.parseInt(editionTextField.getText()));
+        bookDAO.create(book);
     }
 
 

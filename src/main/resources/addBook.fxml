@@ -16,19 +16,19 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="24.0" prefWidth="65.0" text="Title" />
-                  <TextField fx:id="title" />
+                  <TextField fx:id="titleTextField" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="24.0" prefWidth="65.0" text="Edition" />
-                  <TextField />
+                  <TextField fx:id="editionTextField" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="24.0" prefWidth="65.0" text="Description" />
-                  <TextArea prefHeight="200.0" prefWidth="200.0" />
+                  <TextArea fx:id="descriptionTextArea" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
