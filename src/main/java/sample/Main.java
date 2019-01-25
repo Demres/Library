@@ -8,12 +8,21 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+   // public Stage window;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("profile.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Scene scene = new Scene(root, 800, 800);
+        primaryStage.setScene(scene);
+
         primaryStage.show();
+
+        //BorderPane borderPane = (BorderPane)(root);
+        //borderPane.setBottom(new Button("Click me"));
+
+
     }
 
 
