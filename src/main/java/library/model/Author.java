@@ -1,13 +1,13 @@
-package model;
+package library.model;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name="authors")
+@Table(name="AUTHOR")
 public class Author {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     @Column(name="first_name", nullable = false)
     private String firstName;
@@ -38,5 +38,13 @@ public class Author {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }

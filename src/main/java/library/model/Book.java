@@ -1,17 +1,18 @@
-package model;
+package library.model;
 
 import org.hibernate.annotations.NaturalId;
 import org.hibernate.validator.constraints.ISBN;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
-import java.sql.Date;
 import java.time.Year;
 import java.util.Set;
 
 @Entity
-@Table(name = "books")
+@Table(name = "BOOK")
 public class Book {
+    @Id
+    private int id;
     @NaturalId
     @ISBN
     private String ISBN;
@@ -88,5 +89,45 @@ public class Book {
 
     public void setPublicationYear(Year publicationYear) {
         this.publicationYear = publicationYear;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
+    public Set<BookCopy> getBookCopies() {
+        return bookCopies;
+    }
+
+    public void setBookCopies(Set<BookCopy> bookCopies) {
+        this.bookCopies = bookCopies;
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
     }
 }

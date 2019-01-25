@@ -1,13 +1,13 @@
-package model;
+package library.model;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name="languages")
+@Table(name="LANGUAGE")
 public class Language {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     @Column(nullable = false)
     private String name;
@@ -28,5 +28,13 @@ public class Language {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }

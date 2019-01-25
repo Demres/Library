@@ -1,19 +1,21 @@
-package model;
+package library.model;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name="penalties")
+@Table(name="PENALTY")
 public class Penalty {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     @Column(name="due_date", nullable = false)
     private Date dueDate;
     @Column(nullable = false)
     private double amount;
     private double interest;
+    @ManyToOne
+    private User user;
 
     public int getId() {
         return id;
@@ -46,4 +48,5 @@ public class Penalty {
     public void setInterest(double interest) {
         this.interest = interest;
     }
+
 }

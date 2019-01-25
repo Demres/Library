@@ -1,13 +1,13 @@
-package model;
+package library.model;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name="permissions")
+@Table(name="PERMISSION")
 public class Permission {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     @Column(name="manage_books", nullable = false)
     private boolean manageBooks;
@@ -48,5 +48,13 @@ public class Permission {
 
     public void setManageMembers(boolean manageMembers) {
         this.manageMembers = manageMembers;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

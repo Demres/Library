@@ -1,14 +1,14 @@
-package model;
+package library.model;
 
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
 
 @Entity
-@Table(name="reservations")
+@Table(name="RESERVATION")
 public class Reservation {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     @Column(name="start_date", nullable = false)
     private Date startDate;
@@ -17,9 +17,9 @@ public class Reservation {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private ReservationType type;
-    @OneToMany
+    @ManyToMany
     private Set<BookCopy> bookCopies;
-    @OneToOne
+    @ManyToOne
     private User user;
 
     public int getId() {
@@ -52,5 +52,21 @@ public class Reservation {
 
     public void setType(ReservationType type) {
         this.type = type;
+    }
+
+    public Set<BookCopy> getBookCopies() {
+        return bookCopies;
+    }
+
+    public void setBookCopies(Set<BookCopy> bookCopies) {
+        this.bookCopies = bookCopies;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

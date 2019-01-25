@@ -1,4 +1,4 @@
-package model;
+package library.model;
 
 import javax.persistence.*;
 import java.time.Year;

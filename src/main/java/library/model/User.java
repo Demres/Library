@@ -1,4 +1,4 @@
-package model;
+package library.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -6,10 +6,10 @@ import javax.validation.constraints.Pattern;
 import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "USER")
 public class User {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false, unique = true)
     private String login;
@@ -76,5 +76,37 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Set<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(Set<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    public Permission getPermission() {
+        return permission;
+    }
+
+    public void setPermission(Permission permission) {
+        this.permission = permission;
+    }
+
+    public Set<Penalty> getPentalties() {
+        return pentalties;
+    }
+
+    public void setPentalties(Set<Penalty> pentalties) {
+        this.pentalties = pentalties;
+    }
+
+    public Set<Borrow> getBorrows() {
+        return borrows;
+    }
+
+    public void setBorrows(Set<Borrow> borrows) {
+        this.borrows = borrows;
     }
 }

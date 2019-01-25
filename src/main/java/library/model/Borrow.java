@@ -1,19 +1,19 @@
-package model;
+package library.model;
 
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
 
 @Entity
-@Table (name="borrows")
+@Table (name="BORROW")
 public class Borrow {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     /*
     When dealing with dates, it’s a good idea to set a specific time zone for the JDBC driver.
     For our example, we’ll set it up on a per-session basis:
-        session = HibernateUtil.getSessionFactory().withOptions()
+        session = library.HibernateUtil.getSessionFactory().withOptions()
                     .jdbcTimeZone(TimeZone.getTimeZone("UTC"))
                      .openSession();
      Another way would be to set up the hibernate.jdbc.time_zone property in Hibernate properties file that is used to construct the session factory.
@@ -26,7 +26,7 @@ public class Borrow {
     private Date returned;
     @ManyToMany
     private Set<BookCopy> bookCopies;
-    @OneToOne
+    @ManyToOne
     private User user;
 
 
@@ -60,5 +60,21 @@ public class Borrow {
 
     public void setReturned(Date returned) {
         this.returned = returned;
+    }
+
+    public Set<BookCopy> getBookCopies() {
+        return bookCopies;
+    }
+
+    public void setBookCopies(Set<BookCopy> bookCopies) {
+        this.bookCopies = bookCopies;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
