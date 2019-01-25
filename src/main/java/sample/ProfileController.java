@@ -21,7 +21,7 @@ public class ProfileController {
 
     public void initialize(){
 
-        profileTableView.setItems(getItems());
+        //profileTableView.setItems(getItems());
     }
 
     private ObservableList<Book> getItems(){
@@ -53,5 +53,10 @@ public class ProfileController {
     public void switchToReservation(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
         ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addReservation.fxml")));
+    }
+
+    public void switchToBook(ActionEvent event)throws IOException{
+        Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addBook.fxml")));
     }
 }
