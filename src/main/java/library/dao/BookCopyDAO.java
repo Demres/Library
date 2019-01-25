@@ -56,7 +56,6 @@ public class BookCopyDAO {
         try {
             transaction = session.beginTransaction();
             session.save(copy);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

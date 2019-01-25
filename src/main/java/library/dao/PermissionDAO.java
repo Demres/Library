@@ -35,7 +35,6 @@ public class PermissionDAO {
         try {
             transaction = session.beginTransaction();
             session.save(permission);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

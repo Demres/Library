@@ -35,7 +35,6 @@ public class PenaltyDAO {
         try {
             transaction = session.beginTransaction();
             session.save(penalty);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

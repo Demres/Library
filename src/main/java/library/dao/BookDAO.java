@@ -34,7 +34,6 @@ public class BookDAO {
         try {
             transaction = session.beginTransaction();
             session.save(book);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

@@ -33,10 +33,11 @@ public class CategoryDAO {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
-            transaction = session.beginTransaction();
-            session.save(category);
-            transaction = session.beginTransaction();
-            transaction.commit();
+            if(!exists(category)) {
+                transaction = session.beginTransaction();
+                session.save(category);
+                transaction.commit();
+            }
         } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -44,6 +45,28 @@ public class CategoryDAO {
             e.printStackTrace();
         } finally {
             session.close();
+        }
+    }
+
+    private boolean exists(Category category) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        boolean exists = false;
+        try {
+            transaction = session.beginTransaction();
+            List<Category>  categories = session.createQuery("select c from Category c where upper(c.name) like upper(:name)")
+                    .setParameter("name", category.getName())
+                    .list();
+            if(categories.size() != 0)
+                exists = true;
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+            return exists;
         }
     }
 

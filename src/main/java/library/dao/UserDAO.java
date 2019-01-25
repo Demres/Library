@@ -34,7 +34,6 @@ public class UserDAO {
         try {
             transaction = session.beginTransaction();
             session.save(user);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {
