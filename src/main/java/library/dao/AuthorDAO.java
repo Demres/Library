@@ -97,6 +97,26 @@ public class AuthorDAO {
             return author;
         }
     }
+    public List<Author> getByName(String firstname, String lastname) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        List<Author> authors = null;
+        try {
+            transaction = session.beginTransaction();
+            authors = session.createQuery("select a from Author a where upper(a.first_name) like upper(:firstname) and upper(a.last_name) like upper(:lastname)")
+                    .setParameter("firstname", firstname)
+                    .setParameter("lastname", lastname)
+                    .list();
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+            return authors;
+        }
+    }
 
     public List<Book> getAuthorsBooks(Author author) {
         Session session = HibernateUtil.getSessionFactory().openSession();
