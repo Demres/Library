@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.ProfileController">
+    <children>
+        <TableView fx:id="profileTableView" prefHeight="332.0" prefWidth="600.0">
+            <columns>
+                <TableColumn prefWidth="117.0" text="Data wypożyczenia"/>
+                <TableColumn prefWidth="114.0" text="Termin oddania"/>
+                <TableColumn prefWidth="102.0" text="Oddano dnia"/>
+                <TableColumn prefWidth="266.0" text="Tytuły"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
+

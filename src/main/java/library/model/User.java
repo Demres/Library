@@ -15,6 +15,8 @@ public class User {
     private String login;
     @Column(nullable = false)
     private String name, surname;
+    @Column(nullable = false)
+    private String password;
     @Column(nullable = false, unique = true)
     @Email
     private String email;
@@ -44,6 +46,14 @@ public class User {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
