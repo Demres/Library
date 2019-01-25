@@ -43,9 +43,9 @@ public class LoginController {
         ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addAuthor.fxml")));
     }
 
-    public void switchToReservation(ActionEvent event)throws IOException{
+    public void switchToPublisher(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addReservation.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addPublisher.fxml")));
     }
 
     public void switchToBook(ActionEvent event)throws IOException{

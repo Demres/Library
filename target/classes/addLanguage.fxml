@@ -17,7 +17,7 @@
                   <TextField fx:id="languageField" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Add" />
+            <Button mnemonicParsing="false" onAction="#addLanguage" text="Add" />
          </children>
       </VBox>
    </children>

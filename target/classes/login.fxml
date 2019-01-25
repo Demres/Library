@@ -28,7 +28,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#switchToBook" text="Books" />
                         <MenuItem mnemonicParsing="false" onAction="#switchToCategory" text="Category" />
                         <MenuItem mnemonicParsing="false" onAction="#switchToLanguage" text="Language" />
-                        <MenuItem mnemonicParsing="false" onAction="#switchToReservation" text="Reservation" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToPublisher" text="Publisher" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
