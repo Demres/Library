@@ -48,7 +48,7 @@ public class CategoryDAO {
         }
     }
 
-    private boolean exists(Category category) {
+    public boolean exists(Category category) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
         boolean exists = false;

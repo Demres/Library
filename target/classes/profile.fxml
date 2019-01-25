@@ -23,7 +23,7 @@
           <Menu mnemonicParsing="false" text="ManageLibrary">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#switchToAuthor" text="Author" />
-              <MenuItem mnemonicParsing="false" onAction="#switchToBook" text="Books" />
+                <MenuItem mnemonicParsing="false" onAction="#switchToBook" text="Books" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToCategory" text="Category" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToLanguage" text="Language" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToReservation" text="Reservation" />

@@ -60,6 +60,6 @@ public class ProfileController {
 
     public void switchToBook(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addUser.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addBook.fxml")));
     }
 }
