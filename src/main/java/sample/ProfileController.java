@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import library.dao.BookDAO;
 import library.model.Book;
 
 import java.io.IOException;
@@ -21,11 +22,13 @@ public class ProfileController {
 
     public void initialize(){
 
-        //profileTableView.setItems(getItems());
+        profileTableView.setItems(getItems());
     }
 
     private ObservableList<Book> getItems(){
-        return null;
+
+        BookDAO bookDAO = new BookDAO();
+        return (ObservableList) bookDAO.getAll();
     }
 
     public void changeScene(ActionEvent event) throws IOException {
