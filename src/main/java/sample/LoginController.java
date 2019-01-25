@@ -5,12 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import library.dao.UserDAO;
-import library.model.User;
 
 import java.io.IOException;
 
@@ -29,11 +28,42 @@ public class LoginController {
         stageTheEventSourceNodeBelongs.setScene(new Scene(FXMLLoader.load(LoginController.class.getResource("/profile.xml")),800,800));
     }
 
+    public void switchToCategory(ActionEvent event)throws IOException{
+        Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addCategory.fxml")));
+    }
+
+    public void switchToLanguage(ActionEvent event)throws IOException{
+        Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addLanguage.fxml")));
+    }
+
+    public void switchToAuthor(ActionEvent event)throws IOException{
+        Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addAuthor.fxml")));
+    }
+
+    public void switchToReservation(ActionEvent event)throws IOException{
+        Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addReservation.fxml")));
+    }
+
+    public void switchToBook(ActionEvent event)throws IOException{
+        Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addBook.fxml")));
+    }
+
+    public void switchToProfile(ActionEvent event)throws IOException{
+        Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("profile.fxml")));
+    }
+
+
     @FXML
     private void handleButtonClick(ActionEvent event) throws IOException {
         System.out.println("Handle login");
         System.out.println(loginInput.getText());
-        if(loginInput.getText() != null && !loginInput.getText().isEmpty() &&
+        /*if(loginInput.getText() != null && !loginInput.getText().isEmpty() &&
             passwordInput.getText() != null && !passwordInput.getText().isEmpty()) {
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getByLogin(loginInput.getText());
@@ -42,8 +72,7 @@ public class LoginController {
                 if(user.getPassword().equals(passwordInput.getText())) {
                     System.out.println(user.getPassword());
                     System.out.println(passwordInput.getText());
-                    Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
-                    stageTheEventSourceNodeBelongs.setScene(new Scene(FXMLLoader.load(getClass().getResource("/profile.fxml")),800,800));
+                    switchToProfile();
                 }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -56,6 +85,6 @@ public class LoginController {
             alert.setTitle("Błąd");
             alert.setContentText("Wprowadź login i hasło do formularza");
             alert.showAndWait();
-        }
+        }*/
     }
 }

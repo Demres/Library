@@ -30,9 +30,9 @@ public class ProfileController {
 
     public void changeScene(ActionEvent event) throws IOException {
         Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("addBook.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("addUser.fxml"));
         ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(anchorPane);
-        //stageTheEventSourceNodeBelongs.setScene(new Scene(FXMLLoader.load(getClass().getResource("addBook.fxml")),800,800));
+        //stageTheEventSourceNodeBelongs.setScene(new Scene(FXMLLoader.load(getClass().getResource("addUser.fxml")),800,800));
     }
 
     public void switchToCategory(ActionEvent event)throws IOException{
@@ -57,6 +57,6 @@ public class ProfileController {
 
     public void switchToBook(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addBook.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addUser.fxml")));
     }
 }
