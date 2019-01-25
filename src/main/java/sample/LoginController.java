@@ -30,32 +30,32 @@ public class LoginController {
 
     public void switchToCategory(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addCategory.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addCategory.fxml")));
     }
 
     public void switchToLanguage(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addLanguage.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addLanguage.fxml")));
     }
 
     public void switchToAuthor(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addAuthor.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addAuthor.fxml")));
     }
 
     public void switchToReservation(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addReservation.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addReservation.fxml")));
     }
 
     public void switchToBook(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addBook.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/addBook.fxml")));
     }
 
     public void switchToProfile(ActionEvent event)throws IOException{
         Stage stageTheEventSourceNodeBelongs = (Stage) ((MenuItem)event.getTarget()).getParentPopup().getOwnerNode().getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("profile.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("/profile.fxml")));
     }
 
 
