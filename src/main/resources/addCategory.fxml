@@ -17,7 +17,7 @@
                   <TextField fx:id="categoryField" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Add" />
+            <Button mnemonicParsing="false" onAction="#addCategory" text="Add" />
          </children>
       </VBox>
    </children>

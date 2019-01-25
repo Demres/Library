@@ -13,7 +13,7 @@ public class AddCategoryController {
     @FXML
     TextField categoryField;
 
-    public void addLanguage(){
+    public void addCategory(){
         CategoryDAO categoryDAO = new CategoryDAO();
         Category category = new Category();
         category.setName(categoryField.getText());
