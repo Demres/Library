@@ -10,10 +10,9 @@ import java.io.IOException;
 
 public class AddBookController {
 
-
     public void changeScene(ActionEvent event) throws IOException {
         Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageTheEventSourceNodeBelongs.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../../target/classes/sample/profile.fxml")),800,800));
+        stageTheEventSourceNodeBelongs.setScene(new Scene(FXMLLoader.load(getClass().getResource("/profile.fxml")),800,800));
     }
 
 }

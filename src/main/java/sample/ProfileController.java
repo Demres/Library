@@ -28,7 +28,7 @@ public class ProfileController {
 
     public void changeScene(ActionEvent event) throws IOException {
         Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("../../../../target/classes/sample/addBook.fxml")));
+        ((BorderPane)stageTheEventSourceNodeBelongs.getScene().getRoot()).setCenter(FXMLLoader.load(getClass().getResource("addBook.fxml")));
         //stageTheEventSourceNodeBelongs.setScene(new Scene(FXMLLoader.load(getClass().getResource("addBook.fxml")),800,800));
     }
 }

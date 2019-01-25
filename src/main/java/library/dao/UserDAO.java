@@ -98,6 +98,26 @@ public class UserDAO {
         }
     }
 
+    public User getByLogin(String login) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        User user = null;
+        try {
+            transaction = session.beginTransaction();
+            user = (User) session.createQuery("select u from User u where upper(u.login) LIKE upper(:login)")
+                    .setParameter("login", login)
+                    .uniqueResult();
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+            return user;
+        }
+    }
+
     public List<Book> getBooks(User user) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;

@@ -59,14 +59,17 @@ public class HibernateUtil {
 
     }
 
+    public static void loadDatabaseSchema() {
+        ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()//
+                .configure("hibernate.cfg.xml").build();
+        Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
+        SchemaExport export = getSchemaExport();
+        dropDataBase(export, metadata);
+        createDataBase(export, metadata);
+    }
+
     private static SessionFactory buildSessionFactory() {
         try {
-            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()//
-                    .configure("hibernate.cfg.xml").build();
-            Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
-            SchemaExport export = getSchemaExport();
-            dropDataBase(export, metadata);
-            createDataBase(export, metadata);
             return new Configuration().configure().buildSessionFactory();
         }
         catch (Throwable ex) {
