@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -24,11 +24,11 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="ManageLibrary">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Author" />
-                        <MenuItem mnemonicParsing="false" text="Books" />
-                        <MenuItem mnemonicParsing="false" text="Category" />
-                        <MenuItem mnemonicParsing="false" text="Language" />
-                        <MenuItem mnemonicParsing="false" text="Reservation" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToAuthor" text="Author" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToBook" text="Books" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToCategory" text="Category" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToLanguage" text="Language" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToReservation" text="Reservation" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
