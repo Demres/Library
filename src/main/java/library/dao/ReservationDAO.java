@@ -35,7 +35,6 @@ public class ReservationDAO {
         try {
             transaction = session.beginTransaction();
             session.save(reservation);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

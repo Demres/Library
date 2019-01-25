@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddCategoryController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddCategoryController">
    <children>
       <VBox layoutX="24.0" layoutY="24.0" prefHeight="371.0" prefWidth="235.0">
          <children>
@@ -17,7 +17,7 @@
                   <TextField fx:id="categoryField" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Add" />
+            <Button mnemonicParsing="false" onAction="#addCategory" text="Add" />
          </children>
       </VBox>
    </children>

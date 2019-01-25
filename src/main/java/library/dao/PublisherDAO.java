@@ -35,7 +35,6 @@ public class PublisherDAO {
         try {
             transaction = session.beginTransaction();
             session.save(publisher);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

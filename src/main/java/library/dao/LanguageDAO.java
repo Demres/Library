@@ -35,7 +35,6 @@ public class LanguageDAO {
         try {
             transaction = session.beginTransaction();
             session.save(language);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

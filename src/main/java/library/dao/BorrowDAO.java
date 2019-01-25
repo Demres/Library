@@ -36,7 +36,6 @@ public class BorrowDAO {
         try {
             transaction = session.beginTransaction();
             session.save(borrow);
-            transaction = session.beginTransaction();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {
